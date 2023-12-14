@@ -72,11 +72,8 @@
       <DependentUpon>EventData.mdf</DependentUpon>
     </Content>
     <Content Include="MainPage.aspx" />
-    <Content Include="User\Customer\ChangePassword.aspx" />
     <Content Include="User\CreateUser.aspx" />
-    <Content Include="User\Customer\MyAccount.aspx" />
     <Content Include="User\Login.aspx" />
-    <Content Include="User\Customer\Menu.aspx" />
     <Content Include="User\StaffLogin.aspx" />
     <Content Include="User\Staff\CreateStaff.aspx" />
     <Content Include="User\Staff\MyAccount.aspx" />
@@ -93,13 +90,6 @@
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\Customer\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\Customer\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
     <Compile Include="User\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,26 +97,12 @@
     <Compile Include="User\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\Customer\MyAccount.aspx.cs">
-      <DependentUpon>MyAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\Customer\MyAccount.aspx.designer.cs">
-      <DependentUpon>MyAccount.aspx</DependentUpon>
-    </Compile>
     <Compile Include="User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="User\Customer\Menu.aspx.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\Customer\Menu.aspx.designer.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\StaffLogin.aspx.cs">
       <DependentUpon>StaffLogin.aspx</DependentUpon>
