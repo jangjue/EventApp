@@ -24,14 +24,14 @@
             <td class="auto-style5">Sport</td>
             <td class="auto-style5">It is about sport event</td>
             <td class="auto-style5">2023-05-21 06:10:49</td>
-            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" /></td>
+            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" PostBackUrl="~/Admin/ManageCategoryDetail.aspx" /></td>
         </tr>
         <tr>
             <td class="auto-style5">2</td>
             <td class="auto-style5">Political</td>
             <td class="auto-style5">It is about Political event</td>
             <td class="auto-style5">2023-05-21 06:10:49</td>
-            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" /></td>
+            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" PostBackUrl="~/Admin/ManageCategoryDetail.aspx" /></td>
         </tr>
         <tr>
              <td class="auto-style5">3</td>

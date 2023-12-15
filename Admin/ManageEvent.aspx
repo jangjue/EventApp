@@ -24,7 +24,7 @@
             <td class="auto-style5">Basketball Competition</td>
             <td class="auto-style5">Sport</td>
             <td class="auto-style5">2023-05-21 - 2023-05-22</td>
-            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" /></td>
+            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" PostBackUrl="~/Admin/ManageEventDetail.aspx" /></td>
 
         </tr>
         <tr>
@@ -32,7 +32,7 @@
             <td class="auto-style5">political Speech</td>
             <td class="auto-style5">Political</td>
             <td class="auto-style5">2023-05-25 - 2023-05-28</td>
-            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" /></td>
+            <td class="auto-style5"><asp:Button runat="server" Text="Edit" CssClass="edit-button" PostBackUrl="~/Admin/ManageEventDetail.aspx" /></td>
         </tr>
         <tr>
              <td class="auto-style5">3</td>

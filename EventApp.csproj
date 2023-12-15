@@ -74,7 +74,8 @@
     <Content Include="Admin\ManageCategory.aspx" />
     <Content Include="Admin\ManageCategoryDetail.aspx" />
     <Content Include="Admin\ManageEvent.aspx" />
-    <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="Admin\ManageEventDetail.aspx" />
+    <Content Include="Admin\ViewUsers.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
     <Content Include="Admin\StaffLogin.aspx" />
     <Content Include="App_Data\EventData.mdf" />
@@ -110,6 +111,7 @@
     <Content Include="img\home-bg1.png" />
     <Content Include="img\home-bg2.png" />
     <Content Include="img\logo.png" />
+    <Content Include="img\profile.png" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\JavaScript1.js" />
     <Content Include="js\main.js" />
@@ -209,12 +211,19 @@
     <Compile Include="Admin\ManageEvent.aspx.designer.cs">
       <DependentUpon>ManageEvent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ManageUser.aspx.cs">
-      <DependentUpon>ManageUser.aspx</DependentUpon>
+    <Compile Include="Admin\ManageEventDetail.aspx.cs">
+      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ManageUser.aspx.designer.cs">
-      <DependentUpon>ManageUser.aspx</DependentUpon>
+    <Compile Include="Admin\ManageEventDetail.aspx.designer.cs">
+      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewUsers.aspx.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewUsers.aspx.designer.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
