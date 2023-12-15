@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Client.Master.cs" Inherits="EventApp.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Bootstrap CSS File -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="lib/dataTables/dataTables.css" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/venobox/venobox.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <div>
+            <!--==========================
+            Header
+            ============================-->
+            <header id="header">
+                <div class="container">
+                    <div id="logo" class="pull-left">
+                        <a href="#intro" class="scrollto">
+                            <img src="img/logo.png" alt="" title=""></a>
+                    </div>
+
+                    <nav id="nav-menu-container">
+                        <ul class="nav-menu">
+                            <li><a href="Home.aspx">Home</a></li>
+                            <li><a href="Event.aspx">Event</a></li>
+                            <li><a href="MyBooking.aspx">My Booking</a></li>
+                            <li><a href="ContactUs.aspx">Contact Us</a></li>
+                            <li class="buy-tickets"><a href="Profile.aspx">Profile</a></li>
+                        </ul>
+                    </nav>
+                    <!-- #nav-menu-container -->
+                </div>
+            </header>
+            <!-- #header -->
+
+            <!--==========================
+                        Introduction
+                        ============================-->
+            <section id="intro">
+                <div class="intro-container wow fadeIn">
+                    <h1 class="mb-4 pb-0">Event<br>
+                        <span>Management</span> System</h1>
+                    <p class="mb-4 pb-0">We Turn Ideas Into Action. More Than Just Event Planning.</p>
+                    <p class="mb-4 pb-0">An event management system built for growth</p>
+                    <a href="https://www.youtube.com/watch?v=Z9Zc5mcymf4" class="venobox play-btn mb-4" data-vbtype="video"
+                        data-autoplay="true"></a>
+                    <a href="Event.aspx" class="about-btn scrollto">About The Event</a>
+                </div>
+            </section>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--==========================
+                        Footer
+                       ============================-->
+            <footer id="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-md-6 footer-info">
+                                <img src="img/logo.png" alt="TheEvent">
+                                <p>
+                                    "We were able to launch festivals in Australia and New Zealand
+                                    relatively quickly using the exact same set of tools and software,
+                                    and the same website that we already had. That's been another huge benefit for us.”
+                                </p>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 footer-links">
+                                <h4>Useful Links</h4>
+                                <ul>
+                                    <li><i class="fa fa-angle-right"></i><a href="Home.aspx">Home</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="Event.aspx">Event</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="MyBooking.aspx">My Booking</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="ContactUs.aspx">Contact Us</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="#">Terms of service</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="#">Privacy policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-6 footer-contact">
+                                <h4>Contact Us</h4>
+                                <p>
+                                    TARUMT
+                                    <br>
+                                    Jalan Genting Kelang, Setapak<br>
+                                    53300 Kuala Lumpur
+                                    <br>
+                                    <strong>Phone:</strong> +60 03-4145 0123<br>
+                                    <strong>Email:</strong> tarumt@gmail.com<br>
+                                </p>
+
+                                <div class="social-links">
+                                    <a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/" class="instagram"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.google.com/" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong>EMS</strong>. All Rights Reserved
+                    </div>
+                </div>
+            </footer>
+            <!-- #footer -->
+        </div>
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery-migrate.min.js"></script>
+        <script src="lib/jquery/jquery-3.7.1.min.js"></script>
+        <script src="lib/dataTables/dataTables.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/venobox/venobox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Contact Form JavaScript File -->
+        <script src="contactform/contactform.js"></script>
+
+        <!-- Template Main Javascript File -->
+        <script src="js/main.js"></script>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+</body>
+</html>
