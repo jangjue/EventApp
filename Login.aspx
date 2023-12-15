@@ -25,7 +25,7 @@
       </div>
       <div class="form login">
         <header>Login</header>
-        <form action="#">
+        <form action="Home.aspx">
           <input type="text" placeholder="User Name" required />
           <input type="password" placeholder="Password" required />
           <a href="#">Forgot password?</a>
