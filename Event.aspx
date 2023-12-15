@@ -11,62 +11,47 @@
                     <p>Here are the event during the period!</p>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                            <img src="img/event/event1.jpg" alt="Event 1" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.aspx">Brenden Legros</a></h3>
-                                <p>Quas alias incidunt</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                            <img src="img/event/event2.jpg" alt="Event 2" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.html">Hubert Hirthe</a></h3>
-                                <p>Consequuntur odio aut</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                            <img src="img/event/event3.jpg" alt="Event 3" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.html">Cole Emmerich</a></h3>
-                                <p>Fugiat laborum et</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                            <img src="img/event/event6.jpg" alt="Event 4" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.html">Jack Christiansen</a></h3>
-                                <p>Debitis iure vero</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                           <img src="img/event/event5.jpg" alt="Event 5" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.html">Alejandrin Littel</a></h3>
-                                <p>Qui molestiae natus</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="speaker">
-                           <img src="img/event/event8.jpg" alt="Event 6" class="img-fluid"/>
-                            <div class="details">
-                                <h3><a href="event-details.html">Willow Trantow</a></h3>
-                                <p>Non autem dicta</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table id="myTable" class="display">
+                    <thead>
+                        <tr>
+                            <td class="col-lg-4 col-md-6">
+                                <asp:Label ID="Label1" runat="server" Text="Poster"></asp:Label>
+                            </td>
+                            <td class="auto-style5">
+                                <asp:Label ID="Label3" runat="server" Text="Event Name"></asp:Label>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:Label ID="Label4" runat="server" Text="Start Date"></asp:Label>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:Label ID="Label5" runat="server" Text="End Date"></asp:Label>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:Label ID="Label6" runat="server" Text="Categories"></asp:Label>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="auto-style3">
+                                <div ><img class="photo" src="img/event/event4.jpg" alt="Event 1" class="img-fluid" /></div>
+                            </td>
+                            <td class="auto-style5">Star Night</td>
+                            <td class="auto-style1">02/12/2023</td>
+                            <td class="auto-style1">20/12/2023</td>
+                            <td class="auto-style1">Drama</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">
+                                <div><img class="photo" src="img/event/event5.jpg" alt="Event 2" class="img-fluid" /></div>
+                            </td>
+                            <td class="auto-style4">Validity Carnival</td>
+                            <td>05/12/2023</td>
+                            <td>15/12/2023</td>
+                            <td>Singing Competition</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </section>

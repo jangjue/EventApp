@@ -32,13 +32,17 @@
         <img src="../img/event/logo.png" alt=""></i>EMS
       </div>
 
-      <div class="navbar_content">
-        <i class="bi bi-grid"></i>
-        <i class='bx bx-sun' id="darkLight"></i>
-        <i class='bx bx-bell' ></i>
-        <img src="../img/event/profile.png" alt="" class="profile" />
-      </div>
-    </nav>
+            <div class="navbar_content">
+                <i class="bi bi-grid"></i>
+                <i class='bx bx-sun' id="darkLight"></i>
+                <i class='bx bx-bell'></i>
+                <a href="../Profile.aspx">
+                <img src="images/profile.jpg" alt="" class="profile" />
+                    </a>
+                <asp:LoginName ID="LoginName1" runat="server" FormatString="You are logged in as: {0}" />
+
+            </div>
+        </nav>
 
     <!-- sidebar -->
     <nav class="sidebar">
