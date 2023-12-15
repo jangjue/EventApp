@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EventApp.User
+namespace EventApp.Admin
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class ManageCategory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }

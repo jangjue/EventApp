@@ -1,0 +1,72 @@
+﻿body, h1, h2, p, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a font family */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the entire table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style for table headers */
+th {
+    background-color: #007BFF; /* Blue color */
+    color: #fff; /* White text color */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style for table cells */
+td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+/* Style for alternating rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background */
+}
+
+/* Style for the Edit buttons */
+.edit-button {
+    background-color: #007BFF; /* Blue color */
+    color: #fff; /* White text color */
+    border: none; /* Remove default button border */
+    padding: 8px 16px; /* Add padding to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+    .edit-button:hover {
+        background-color: #0056b3; /* Darker blue color on hover */
+    }
+
+.auto-style4 {
+    width: 603px;
+}
+
+.auto-style5 {
+    height: 20px;
+}
+
+.auto-style6 {
+    height: 44px;
+}
+
+.cancel-button {
+    background-color: #dc3545; /* Red color */
+    color: #fff; /* White text color */
+    border: none; /* Remove default button border */
+    padding: 8px 16px; /* Add padding to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+    .cancel-button:hover {
+        background-color: #c82333; /* Darker red color on hover */
+    }

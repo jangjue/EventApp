@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EventApp.User.Staff
+namespace EventApp.Admin
 {
-    public partial class StaffMenu : System.Web.UI.Page
+    public partial class AdminMasterPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
