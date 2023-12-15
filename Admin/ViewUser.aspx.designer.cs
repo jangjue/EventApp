@@ -11,7 +11,7 @@ namespace EventApp.Admin
 {
 
 
-    public partial class Booking1
+    public partial class ManageUser1
     {
     }
 }

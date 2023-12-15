@@ -8,7 +8,7 @@
     <div style="margin-top: 20px; margin-bottom: 20px;">
     <table id="myTable" class="auto-style4">
     <thead>
-        <h2>Manage Category</h2>
+        <h2>Manage Event</h2>
     <hr style="margin-top: 10px; margin-bottom: 20px;" />
         <tr>
             <th class="auto-style6">#</th>

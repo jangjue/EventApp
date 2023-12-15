@@ -72,6 +72,7 @@
     <Content Include="Admin\Booking.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\ManageCategory.aspx" />
+    <Content Include="Admin\ManageCategoryDetail.aspx" />
     <Content Include="Admin\ManageEvent.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
     <Content Include="Admin\ChangePassword.aspx" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="Admin\ManageCategory.aspx.designer.cs">
       <DependentUpon>ManageCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetail.aspx.cs">
+      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetail.aspx.designer.cs">
+      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageEvent.aspx.cs">
       <DependentUpon>ManageEvent.aspx</DependentUpon>
