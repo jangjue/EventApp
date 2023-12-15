@@ -75,3 +75,25 @@ div.button-space {
     width: 100px; /* Adjust the space width as needed */
     display: inline-block;
 }
+
+.checkbox-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .checkbox-list li {
+        display: inline-block;
+        margin-right: 10px; /* Adjust the spacing between checkbox items */
+    }
+
+    .checkbox-list label {
+        display: inline-block;
+        margin-right: 5px; /* Adjust the spacing between the checkbox and label */
+    }
+
+    /* Style for the space between checkbox items */
+    .checkbox-list .checkbox-space {
+        width: 10px; /* Adjust the space width as needed */
+        display: inline-block;
+    }

@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddCategory.aspx.cs" Inherits="EventApp.Admin.AddCatagory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="../css/StyleSheet1.css" />
+    <link rel="stylesheet" type="text/css" href="../css/AdminCategory.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
+    <h2 class="form-header">Add Category</h2>
     <hr class="form-divider" />
 
     <div class="form-container">
