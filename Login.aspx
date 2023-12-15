@@ -92,7 +92,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Login ID="Login1" runat="server" class="frmalg">
+    <asp:Login ID="Login1" runat="server" class="frmalg" DestinationPageUrl="~/Home.aspx">
         <LayoutTemplate>
             <center>
                 <h3>Login </h3>
