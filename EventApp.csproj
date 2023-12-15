@@ -74,6 +74,8 @@
     <Content Include="Admin\ManageCategory.aspx" />
     <Content Include="Admin\ManageEvent.aspx" />
     <Content Include="Admin\ManageUser.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Admin\StaffLogin.aspx" />
     <Content Include="App_Data\EventData.mdf" />
     <Content Include="App_Data\EventData_log.ldf">
       <DependentUpon>EventData.mdf</DependentUpon>
@@ -107,7 +109,6 @@
     <Content Include="img\home-bg1.png" />
     <Content Include="img\home-bg2.png" />
     <Content Include="img\logo.png" />
-    <Content Include="index.html" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\JavaScript1.js" />
     <Content Include="js\main.js" />
@@ -143,10 +144,10 @@
     <Content Include="lib\venobox\venobox.min.js" />
     <Content Include="lib\wow\wow.js" />
     <Content Include="lib\wow\wow.min.js" />
+    <Content Include="Login.aspx" />
     <Content Include="MyBooking.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="Profile.aspx" />
-    <Content Include="speaker-details.html" />
     <Content Include="Web.config" />
     <Content Include="ContactUs.aspx" />
   </ItemGroup>
@@ -207,6 +208,20 @@
     <Compile Include="Admin\ManageUser.aspx.designer.cs">
       <DependentUpon>ManageUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StaffLogin.aspx.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StaffLogin.aspx.designer.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="event-details.aspx.cs">
       <DependentUpon>event-details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,6 +242,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyBooking.aspx.cs">
       <DependentUpon>MyBooking.aspx</DependentUpon>
