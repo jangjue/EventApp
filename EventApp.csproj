@@ -85,6 +85,7 @@
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\Readme.txt" />
     <Content Include="css\AddEvent.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\MasterPage.css" />
     <Content Include="css\payment.css" />
     <Content Include="css\style.css" />
