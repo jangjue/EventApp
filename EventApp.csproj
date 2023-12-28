@@ -67,6 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddCategory.aspx" />
+    <Content Include="Admin\AddEvent.aspx" />
+    <Content Include="Admin\Booking.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\ManageCategory.aspx" />
+    <Content Include="Admin\ManageCategoryDetail.aspx" />
+    <Content Include="Admin\ManageCategoryDetails.aspx" />
+    <Content Include="Admin\ManageEvent.aspx" />
+    <Content Include="Admin\ManageEventDetail.aspx" />
+    <Content Include="Admin\ViewBooking.aspx" />
+    <Content Include="Admin\ViewEventBooking.aspx" />
+    <Content Include="Admin\ViewUsers.aspx" />
+    <Content Include="App_Data\EventManagement.mdf" />
+    <Content Include="App_Data\EventManagement_log.ldf">
+      <DependentUpon>EventManagement.mdf</DependentUpon>
+    </Content>
     <Content Include="contactform\contactform.js" />
     <Content Include="contactform\Readme.txt" />
     <Content Include="css\AddEvent.css" />
@@ -141,6 +157,97 @@
     <Content Include="ContactUs.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddEvent.aspx.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddEvent.aspx.designer.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMasterPage.Master.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMasterPage.Master.designer.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageCategory.aspx.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageCategory.aspx.designer.cs">
+      <DependentUpon>ManageCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetail.aspx.cs">
+      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetail.aspx.designer.cs">
+      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetails.aspx.cs">
+      <DependentUpon>ManageCategoryDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageCategoryDetails.aspx.designer.cs">
+      <DependentUpon>ManageCategoryDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageEvent.aspx.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageEvent.aspx.designer.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageEventDetail.aspx.cs">
+      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageEventDetail.aspx.designer.cs">
+      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewBooking.aspx.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewBooking.aspx.designer.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewEventBooking.aspx.cs">
+      <DependentUpon>ViewEventBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewEventBooking.aspx.designer.cs">
+      <DependentUpon>ViewEventBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewUsers.aspx.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewUsers.aspx.designer.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="event-details.aspx.cs">
       <DependentUpon>event-details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,6 +319,7 @@
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Admin\AdminMasterPage.Master" />
     <None Include="packages.config" />
     <Content Include="Client.Master" />
     <None Include="Web.Debug.config">
