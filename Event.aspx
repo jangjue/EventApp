@@ -34,7 +34,11 @@
                     <tbody>
                         <tr>
                             <td class="auto-style3">
-                                <div ><img class="photo" src="img/event/event4.jpg" alt="Event 1" class="img-fluid" /></div>
+                                <div>
+                                    <a href="event-details.aspx">
+                                        <img class="photo" src="img/event/event1.jpg" alt="Event 1" class="img-fluid" />
+                                    </a>
+                                </div>
                             </td>
                             <td class="auto-style5">Star Night</td>
                             <td class="auto-style1">02/12/2023</td>
@@ -43,7 +47,10 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <div><img class="photo" src="img/event/event5.jpg" alt="Event 2" class="img-fluid" /></div>
+                                <div>
+                                    <a href="event-details.aspx">
+                                        <img class="photo" src="img/event/event4.jpg" alt="Event 1" class="img-fluid" /></a>
+                                </div>
                             </td>
                             <td class="auto-style4">Validity Carnival</td>
                             <td>05/12/2023</td>
