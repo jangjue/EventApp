@@ -12,19 +12,21 @@
             <div class="form-section">
                 <asp:Label runat="server" CssClass="form-label" Text="Category"></asp:Label>
                 <br />
-                <input id="Text1" type="text" class="form-input" />
+                <asp:TextBox runat="server" CssClass="form-input" ID="txtCategory" placeholder="Enter category name"></asp:TextBox>
             </div>
 
             <div class="form-section">
                 <asp:Label runat="server" CssClass="form-label" Text="Description"></asp:Label>
                 <br />
-                <asp:TextBox runat="server" CssClass="form-input"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="form-input" ID="txtDescription" placeholder="Enter category description"></asp:TextBox>
             </div>
 
             <div class="form-section">
-                <asp:Button runat="server" Text="Submit" CssClass="form-button" />
+                <asp:Button runat="server" Text="Submit" CssClass="form-button" OnClick="Unnamed4_Click" />
             </div>
         </form>
     </div>
+
+    <asp:Label runat="server" ID="lblMessage"></asp:Label>
 
 </asp:Content>

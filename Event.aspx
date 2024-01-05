@@ -1,9 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client.Master" AutoEventWireup="true" CodeBehind="Event.aspx.cs" Inherits="EventApp.Event" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        
-    <main id="main">
+    
+    <main id="main" style="padding-top: 50px">
         <section id="speakers" class="wow fadeInUp">
             <div class="container">
                 <div class="section-header">
@@ -11,56 +13,70 @@
                     <p>Here are the event during the period!</p>
                 </div>
 
-                <table id="myTable" class="display">
-                    <thead>
-                        <tr>
-                            <td class="col-lg-4 col-md-6">
-                                <asp:Label ID="Label1" runat="server" Text="Poster"></asp:Label>
-                            </td>
-                            <td class="auto-style5">
-                                <asp:Label ID="Label3" runat="server" Text="Event Name"></asp:Label>
-                            </td>
-                            <td class="auto-style1">
-                                <asp:Label ID="Label4" runat="server" Text="Start Date"></asp:Label>
-                            </td>
-                            <td class="auto-style1">
-                                <asp:Label ID="Label5" runat="server" Text="End Date"></asp:Label>
-                            </td>
-                            <td class="auto-style1">
-                                <asp:Label ID="Label6" runat="server" Text="Categories"></asp:Label>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                    <HeaderTemplate>
+                        <table id="myTable" class="display">
+                            <thead>
+                                <tr>
+                                    <td class="col-lg-4 col-md-6">
+                                        <asp:Label ID="Label1" runat="server" Text="Poster"></asp:Label>
+                                    </td>
+                                    <td class="auto-style5">
+                                        <asp:Label ID="Label2" runat="server" Text="Event Name"></asp:Label>
+                                    </td>
+                                    <td class="auto-style1">
+                                        <asp:Label ID="Label3" runat="server" Text="Start Date"></asp:Label>
+                                    </td>
+                                    <td class="auto-style1">
+                                        <asp:Label ID="Label4" runat="server" Text="End Date"></asp:Label>
+                                    </td>
+                                    <td class="auto-style1">
+                                        <asp:Label ID="Label5" runat="server" Text="State"></asp:Label>
+                                    </td>
+                                    <td class="auto-style1">
+                                        <asp:Label ID="Label6" runat="server" Text="Category"></asp:Label>
+                                    </td>
+                                </tr>
+                            </thead>
+                    </HeaderTemplate>
+                    <ItemTemplate>
                         <tr>
                             <td class="auto-style3">
                                 <div>
-                                    <a href="event-details.aspx">
-                                        <img class="photo" src="img/event/event1.jpg" alt="Event 1" class="img-fluid" />
+                                    <a href='<%# Eval("EventID", "event-details.aspx?EventID={0}") %>'>
+                                        <img class="photo" src='<%# "ImageHandler.ashx?EventID=" + Eval("EventID") %>' class="img-fluid" />
                                     </a>
                                 </div>
                             </td>
-                            <td class="auto-style5">Star Night</td>
-                            <td class="auto-style1">02/12/2023</td>
-                            <td class="auto-style1">20/12/2023</td>
-                            <td class="auto-style1">Drama</td>
+                            <td class="auto-style5"><%# Eval("Name") %></td>
+                            <td class="auto-style1"><%# Eval("StartDate", "{0:MM/dd/yyyy}") %></td>
+                            <td class="auto-style1"><%# Eval("EndDate", "{0:MM/dd/yyyy}") %></td>
+                            <td class="auto-style1"><%# Eval("State") %></td>
+                            <td class="auto-style1"><%# Eval("CategoryName") %></td>
                         </tr>
-                        <tr>
-                            <td class="auto-style2">
-                                <div>
-                                    <a href="event-details.aspx">
-                                        <img class="photo" src="img/event/event4.jpg" alt="Event 1" class="img-fluid" /></a>
-                                </div>
-                            </td>
-                            <td class="auto-style4">Validity Carnival</td>
-                            <td>05/12/2023</td>
-                            <td>15/12/2023</td>
-                            <td>Singing Competition</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </table>
+                    </FooterTemplate>
+                </asp:Repeater>
             </div>
-
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                SelectCommand="SELECT EventID, Name, StartDate, EndDate, Image, State, CategoryName
+FROM (
+    SELECT 
+        Event.EventID, 
+        Event.Name, 
+        Event.StartDate, 
+        Event.EndDate, 
+        Event.Image, 
+        Venue.State, 
+        Category.name AS CategoryName,
+        CAST(Event.EndDate AS DATE) AS EndDateOnly
+    FROM Event
+    INNER JOIN Category ON Event.CategoryID = Category.CategoryID
+    INNER JOIN Venue ON Event.VenueID = Venue.VenueID
+) AS Events
+WHERE EndDateOnly >= CAST(GETDATE() AS DATE);"></asp:SqlDataSource>
         </section>
     </main>
 </asp:Content>

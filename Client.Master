@@ -42,8 +42,9 @@
                     <nav id="nav-menu-container">
                         <ul class="nav-menu">
                             <li><a href="Home.aspx">Home</a></li>
-                            <li><a href="Event.aspx">Event</a></li>
+                            <%--<li><a href="Event.aspx">Event</a></li>--%>
                             <li><a href="MyBooking.aspx">My Booking</a></li>
+                            <li><a href="AboutUs.aspx">About Us</a></li>
                             <li><a href="ContactUs.aspx">Contact Us</a></li>
                             <li class="buy-tickets"><a href="Profile.aspx">Profile</a></li>
                         </ul>
@@ -56,17 +57,11 @@
             <!--==========================
                         Introduction
                         ============================-->
-            <section id="intro">
-                <div class="intro-container wow fadeIn">
-                    <h1 class="mb-4 pb-0">Event<br>
-                        <span>Management</span> System</h1>
-                    <p class="mb-4 pb-0">We Turn Ideas Into Action. More Than Just Event Planning.</p>
-                    <p class="mb-4 pb-0">An event management system built for growth</p>
-                    <a href="https://www.youtube.com/watch?v=Z9Zc5mcymf4" class="venobox play-btn mb-4" data-vbtype="video"
-                        data-autoplay="true"></a>
-                    <a href="Event.aspx" class="about-btn scrollto">About The Event</a>
-                </div>
-            </section>
+            
+
+                        <!--==========================
+                        ContentPlaceHolder
+                        ============================-->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <!--==========================
@@ -98,8 +93,8 @@
                                 <h4>Links</h4>
                                 <ul>
                                     <li><i class="fa fa-angle-right"></i><a href="ContactUs.aspx">Contact Us</a></li>
-                                    <li><i class="fa fa-angle-right"></i><a href="#">Terms of service</a></li>
-                                    <li><i class="fa fa-angle-right"></i><a href="#">Privacy policy</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="AboutUs.aspx">About Us</a></li>
+                                    <li><i class="fa fa-angle-right"></i><a href="Admin/Dashboard.aspx">Privacy policy</a></li>
                                 </ul>
                             </div>
 
@@ -160,8 +155,11 @@
     <script>
         $(document).ready(function () {
             $('#myTable').DataTable();
+            $('#myTable1').DataTable();
         });
     </script>
+
+    </form>
 
 </body>
 </html>

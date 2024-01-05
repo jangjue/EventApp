@@ -11,7 +11,11 @@ namespace EventApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (Session["User"] == null)
+            //{
+            //    // Redirect to the login page
+            //    Response.Redirect("Login.aspx");
+            //}
         }
     }
 }

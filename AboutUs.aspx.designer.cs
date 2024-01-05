@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EventApp.Admin
+namespace EventApp
 {
 
 
-    public partial class ManageEventDetail
+    public partial class AboutUs
     {
     }
 }

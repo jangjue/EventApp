@@ -43,7 +43,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.3.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>packages\MailKit.4.3.0\lib\net47\MailKit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=4.3.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>packages\MimeKit.4.3.0\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Formats.Asn1, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Formats.Asn1.7.0.0\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,24 +103,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="Admin\AddCategory.aspx" />
     <Content Include="Admin\AddEvent.aspx" />
+    <Content Include="Admin\AddVenue.aspx" />
     <Content Include="Admin\Booking.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\ManageCategory.aspx" />
-    <Content Include="Admin\ManageCategoryDetail.aspx" />
     <Content Include="Admin\ManageCategoryDetails.aspx" />
     <Content Include="Admin\ManageEvent.aspx" />
-    <Content Include="Admin\ManageEventDetail.aspx" />
-    <Content Include="Admin\ViewBooking.aspx" />
+    <Content Include="Admin\ManageEventDetails.aspx" />
+    <Content Include="Admin\ManageVenue.aspx" />
+    <Content Include="Admin\ManageVenueDetails.aspx" />
     <Content Include="Admin\ViewEventBooking.aspx" />
     <Content Include="Admin\ViewUsers.aspx" />
+    <Content Include="Admin\ViewUsersDetails.aspx" />
     <Content Include="App_Data\EventManagement.mdf" />
     <Content Include="App_Data\EventManagement_log.ldf">
       <DependentUpon>EventManagement.mdf</DependentUpon>
     </Content>
+    <Content Include="ConfirmationBooking.aspx" />
     <Content Include="contactform\contactform.js" />
-    <Content Include="contactform\Readme.txt" />
     <Content Include="css\AddEvent.css" />
     <Content Include="css\login.css" />
     <Content Include="css\MasterPage.css" />
@@ -94,6 +133,7 @@
     <Content Include="css\table.css" />
     <Content Include="event-details.aspx" />
     <Content Include="Event.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\about-bg.jpg" />
     <Content Include="img\apple-touch-icon.png" />
@@ -153,10 +193,21 @@
     <Content Include="MyBooking.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="Profile.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="UserCreate.aspx" />
+    <Content Include="UserLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="ContactUs.aspx" />
+    <Content Include="SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddCategory.aspx.cs">
       <DependentUpon>AddCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,6 +221,13 @@
     </Compile>
     <Compile Include="Admin\AddEvent.aspx.designer.cs">
       <DependentUpon>AddEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddVenue.aspx.cs">
+      <DependentUpon>AddVenue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddVenue.aspx.designer.cs">
+      <DependentUpon>AddVenue.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminMasterPage.Master.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
@@ -199,13 +257,6 @@
     <Compile Include="Admin\ManageCategory.aspx.designer.cs">
       <DependentUpon>ManageCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ManageCategoryDetail.aspx.cs">
-      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ManageCategoryDetail.aspx.designer.cs">
-      <DependentUpon>ManageCategoryDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\ManageCategoryDetails.aspx.cs">
       <DependentUpon>ManageCategoryDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,19 +271,26 @@
     <Compile Include="Admin\ManageEvent.aspx.designer.cs">
       <DependentUpon>ManageEvent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ManageEventDetail.aspx.cs">
-      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
+    <Compile Include="Admin\ManageEventDetails.aspx.cs">
+      <DependentUpon>ManageEventDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ManageEventDetail.aspx.designer.cs">
-      <DependentUpon>ManageEventDetail.aspx</DependentUpon>
+    <Compile Include="Admin\ManageEventDetails.aspx.designer.cs">
+      <DependentUpon>ManageEventDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ViewBooking.aspx.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    <Compile Include="Admin\ManageVenue.aspx.cs">
+      <DependentUpon>ManageVenue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ViewBooking.aspx.designer.cs">
-      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    <Compile Include="Admin\ManageVenue.aspx.designer.cs">
+      <DependentUpon>ManageVenue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageVenueDetails.aspx.cs">
+      <DependentUpon>ManageVenueDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageVenueDetails.aspx.designer.cs">
+      <DependentUpon>ManageVenueDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ViewEventBooking.aspx.cs">
       <DependentUpon>ViewEventBooking.aspx</DependentUpon>
@@ -248,6 +306,20 @@
     <Compile Include="Admin\ViewUsers.aspx.designer.cs">
       <DependentUpon>ViewUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ViewUsersDetails.aspx.cs">
+      <DependentUpon>ViewUsersDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewUsersDetails.aspx.designer.cs">
+      <DependentUpon>ViewUsersDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationBooking.aspx.cs">
+      <DependentUpon>ConfirmationBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmationBooking.aspx.designer.cs">
+      <DependentUpon>ConfirmationBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="event-details.aspx.cs">
       <DependentUpon>event-details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -262,12 +334,22 @@
     <Compile Include="Event.aspx.designer.cs">
       <DependentUpon>Event.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageHandler.ashx.cs">
+      <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -305,12 +387,41 @@
     <Compile Include="Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
     </Compile>
+    <Compile Include="SendEmail.cs" />
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCreate.aspx.cs">
+      <DependentUpon>UserCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCreate.aspx.designer.cs">
+      <DependentUpon>UserCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +431,7 @@
     <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="Admin\AdminMasterPage.Master" />
+    <Content Include="ImageHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="Client.Master" />
     <None Include="Web.Debug.config">

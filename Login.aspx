@@ -1,48 +1,31 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="EventApp.Login" %>
 
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Login & Signup Form</title>
-    <link rel="stylesheet" href="css/login.css"/>
-  </head>
-  <body>
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
     <section class="wrapper">
-      <div class="form signup">
-        <header>Signup</header>
-        <form action="#">
-          <input type="text" placeholder="Full name" required />
-          <input type="text" placeholder="User Name" required />
-          <input type="text" placeholder="Email address" required />
-          <input type="password" placeholder="Password" required />
-          <input type="password" placeholder="Confirm Password" required />
-          <input type="submit" value="Signup" />
-        </form>
-      </div>
-      <div class="form login">
-        <header>Login</header>
-        <form action="Home.aspx">
-          <input type="text" placeholder="User Name" required />
-          <input type="password" placeholder="Password" required />
-          <a href="#">Forgot password?</a>
-          <input type="submit" value="Login" />
-        </form>
-      </div>
-      <script>
-        const wrapper = document.querySelector(".wrapper"),
-          signupHeader = document.querySelector(".signup header"),
-          loginHeader = document.querySelector(".login header");
-        loginHeader.addEventListener("click", () => {
-          wrapper.classList.add("active");
-        });
-        signupHeader.addEventListener("click", () => {
-          wrapper.classList.remove("active");
-        });
-      </script>
+        <div class="form signup">
+            <header>Login</header>
+            <form runat="server" id="loginForm" onsubmit="return submitForm()">
+                <asp:TextBox ID="txtUserName" runat="server" placeholder="User Name" />
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Password" />
+                <asp:Button ID="loginButton" runat="server" Text="Login" OnClientClick="return submitForm()" OnClick="btnLogin_Click" />
+            </form>
+
+        </div>
+                <div class="text">
+            <h3>Forgot Password? <a href="ForgotPassword.aspx">Click Here</a></h3>
+        </div>        <div class="text">
+            <h3>Does Not have an account? <a href="SignUp.aspx">Sign Up now</a></h3>
+        </div>
     </section>
-  </body>
+</body>
 </html>

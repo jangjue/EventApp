@@ -1,73 +1,158 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddEvent.aspx.cs" Inherits="EventApp.Admin.AddEvent" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="AddEvent.aspx.cs" Inherits="EventApp.Admin.AddEvent" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../css/AddEvent.css" />
-            <h2>Add Event</h2>
+    <h2>Add Event</h2>
     <hr style="margin-top: 10px; margin-bottom: 20px;" />
     <div class="fieldset-container">
-    <fieldset>
-        <legend>Add Event Form</legend>
-        <asp:Label runat="server" Text="Category"></asp:Label><br />
-        <asp:DropDownList runat="server">
-            <asp:ListItem></asp:ListItem>
-            <asp:ListItem>Sport</asp:ListItem>
-            <asp:ListItem>Political</asp:ListItem>
-            <asp:ListItem>Business</asp:ListItem>
-        </asp:DropDownList><br />
+        <fieldset>
+            <legend>Add Event Form</legend>
+            <asp:Label runat="server" Text="" ID="lblMessage"></asp:Label><br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyEventDB %>" SelectCommand="SELECT [name] FROM [Category]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MyEventDB %>" SelectCommand="SELECT [VenueName] FROM [Venue]"></asp:SqlDataSource>
+            <asp:Label runat="server" Text="Category"></asp:Label>
+            <br />
+            <asp:DropDownList runat="server" AppendDataBoundItems="True" DataTextField="name" DataValueField="name" DataSourceID="SqlDataSource1" ID="ddlCategory">
+                <asp:ListItem Text="-- Select Category --" Value="" />
+            </asp:DropDownList><br />
+            <asp:Label runat="server" Text="Venue"></asp:Label>
+            <br />
+            <asp:DropDownList runat="server" AppendDataBoundItems="True" DataTextField="VenueName" DataValueField="VenueName" DataSourceID="SqlDataSource2" ID="ddlVenue">
+                <asp:ListItem Text="-- Select Venue --" Value="" />
+            </asp:DropDownList>
+            <br />
 
-        <asp:Label runat="server" Text="Name"></asp:Label><br />
-        <input id="Text1" type="text" /><br />
+            <asp:Label runat="server" Text="Name"></asp:Label>
+            <br />
+            <asp:TextBox runat="server" placeholder="Enter event name" id="txtName"></asp:TextBox>
+            <asp:Label runat="server" Text="Description"></asp:Label>
+            <br />
+            <asp:TextBox runat="server" placeholder="Enter event description" id="txtEventDescription"></asp:TextBox>
 
-        <asp:Label runat="server" Text="Description"></asp:Label><br />
-        <input id="Text1" type="text" /><br />
+            <asp:Label runat="server" Text="Ticket Type"></asp:Label>
+            <asp:CheckBoxList ID="chkTicketLevels" runat="server" RepeatDirection="Horizontal" CssClass="checkbox-list">
+                <asp:ListItem Value="Standard">Standard</asp:ListItem>
+                <asp:ListItem Value="Pro">Pro</asp:ListItem>
+                <asp:ListItem Value="Premium">Premium</asp:ListItem>
+            </asp:CheckBoxList>
+            <br />
 
-        <asp:CheckBoxList runat="server" RepeatDirection="Horizontal" CssClass="checkbox-list">
-            <asp:ListItem>Standard</asp:ListItem>
-            <asp:ListItem>Pro</asp:ListItem>
-            <asp:ListItem>Premium</asp:ListItem>
-        </asp:CheckBoxList>
-        <asp:TextBox runat="server"></asp:TextBox>
-        <asp:TextBox runat="server"></asp:TextBox>
-        <asp:TextBox runat="server"></asp:TextBox>
+            <div id="standardDescription" style="display: none;">
+                <asp:TextBox ID="txtStandardDescription" runat="server" placeholder="Standard Ticket Description"></asp:TextBox>
+                <asp:Label runat="server" Text="Total Standard Ticket :   "></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="txtStandardCapacity" runat="server" placeholder="(e.g 100)" min="1" /><br />
+                <asp:Label runat="server" Text="Standard Ticket Price : RM"></asp:Label>
+                <input type="number" id="txtStandardPrice" runat="server" placeholder="0.00" pattern="^\d+(\.\d{2})?$" title="Enter a non-negative number with up to two decimal places" /><br />
+            </div>
+            <br />
 
-        <asp:Label runat="server" Text="Start Date"></asp:Label><br />
-        <asp:Calendar runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-            <NextPrevStyle VerticalAlign="Bottom" />
-            <OtherMonthDayStyle ForeColor="#808080" />
-            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-            <SelectorStyle BackColor="#CCCCCC" />
-            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-            <WeekendDayStyle BackColor="#FFFFCC" />
-        </asp:Calendar><br />
+            <div id="proDescription" style="display: none;">
+                <asp:TextBox ID="txtProDescription" runat="server" placeholder="Pro Ticket Description"></asp:TextBox>
+                <asp:Label runat="server" Text="Total Pro Ticket :   "></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="txtProCapacity" runat="server" placeholder="(e.g 100)" min="1" /><br />
+                <asp:Label runat="server" Text="Pro Ticket Price : RM"></asp:Label>
+                <input type="number" id="txtProPrice" runat="server" placeholder="0.00" pattern="^\d+(\.\d{2})?$" title="Enter a non-negative number with up to two decimal places" /><br />
+            </div>
+            <br />
 
-        <asp:Label runat="server" Text="End Date"></asp:Label><br />
-        <asp:Calendar runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-            <NextPrevStyle VerticalAlign="Bottom" />
-            <OtherMonthDayStyle ForeColor="#808080" />
-            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-            <SelectorStyle BackColor="#CCCCCC" />
-            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-            <WeekendDayStyle BackColor="#FFFFCC" />
-        </asp:Calendar><br />
+            <div id="premiumDescription" style="display: none;">
+                <asp:TextBox ID="txtPremiumDescription" runat="server" placeholder="Premium Ticket Description"></asp:TextBox>
+                <asp:Label runat="server" Text="Total Premium Ticket :   "></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="number" id="txtPremiumCapacity" runat="server" placeholder="(e.g 100)" min="1" /><br />
+                <asp:Label runat="server" Text="Premium Ticket Price : RM"></asp:Label>
+                <input type="number" id="txtPremiumPrice" runat="server" placeholder="0.00" pattern="^\d+(\.\d{2})?$" title="Enter a non-negative number with up to two decimal places" /><br />
+            </div>
+            <br />
 
-        <asp:Label runat="server" Text="Venue"></asp:Label><br />
-        <asp:TextBox runat="server"></asp:TextBox><br />
+            <asp:Label runat="server" Text="Start Date"></asp:Label>
+            <br />
+            <asp:Calendar ID="calStartDate" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest"
+                Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" Width="400px"
+                OnSelectionChanged="calStartDate_SelectionChanged" NextPrevFormat="FullMonth" TitleFormat="Month">
+                <dayheaderstyle backcolor="#CCCCCC" font-bold="True" font-size="7pt" forecolor="#333333" height="10pt" />
+                <daystyle width="14%" />
+                <nextprevstyle font-size="8pt" forecolor="White" />
+                <othermonthdaystyle forecolor="#999999" />
+                <selecteddaystyle backcolor="#CC3333" forecolor="White" />
+                <selectorstyle backcolor="#CCCCCC" font-bold="True" font-names="Verdana" font-size="8pt" forecolor="#333333" width="1%" />
+                <titlestyle backcolor="Black" font-bold="True" font-size="13pt" forecolor="White" height="14pt" />
+                <todaydaystyle backcolor="#CCCC99" />
+            </asp:Calendar>
+            <asp:Label ID="lblStartDateError" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+            <br />
+            <br />
 
-        <asp:Label runat="server" Text="Location"></asp:Label><br />
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d7967.0714855348515!2d101.726904!3d3.215785!3m2!1i1024!2i768!4f13.1!2m1!1starumt!5e0!3m2!1sen!2smy!4v1702574901114!5m2!1sen!2smy" width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div><br />
+            <asp:Label runat="server" Text="End Date"></asp:Label>
+            <br />
+            <asp:Calendar ID="calEndDate" runat="server" BackColor="White" BorderColor="Black" DayNameFormat="Shortest"
+                Font-Names="Times New Roman" Font-Size="10pt" ForeColor="Black" Height="220px" Width="400px"
+                OnSelectionChanged="calEndDate_SelectionChanged" NextPrevFormat="FullMonth" TitleFormat="Month">
+                <dayheaderstyle backcolor="#CCCCCC" font-bold="True" font-size="7pt" forecolor="#333333" height="10pt" />
+                <daystyle width="14%" />
+                <nextprevstyle font-size="8pt" forecolor="White" />
+                <othermonthdaystyle forecolor="#999999" />
+                <selecteddaystyle backcolor="#CC3333" forecolor="White" />
+                <selectorstyle backcolor="#CCCCCC" font-bold="True" font-names="Verdana" font-size="8pt" forecolor="#333333" width="1%" />
+                <titlestyle backcolor="Black" font-bold="True" font-size="13pt" forecolor="White" height="14pt" />
+                <todaydaystyle backcolor="#CCCC99" />
+            </asp:Calendar>
+            <asp:Label ID="lblEndDateError" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="lblEventDuration" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:Label runat="server" Text="Event Featured Image"></asp:Label>
+            <br />
+            <asp:FileUpload runat="server" ID="fileEventImage"></asp:FileUpload>
+            <br />
+            <br />
+            <asp:Button runat="server" Text="Reset" />
+            <asp:Button runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+        </fieldset>
+    </div>
 
-        <asp:Label runat="server" Text="Event Featured Image"></asp:Label><br />
-        <asp:FileUpload runat="server"></asp:FileUpload><br /><br />
-        <asp:Button runat="server" Text="Reset" />
-        <asp:Button runat="server" Text="Submit" />
-    </fieldset>
-        </div>
+    <script type="text/javascript">
+        // Function to show/hide textboxes based on checkbox selection
+        function toggleTextBoxes() {
+            var standardDescription = document.getElementById('standardDescription');
+            var proDescription = document.getElementById('proDescription');
+            var premiumDescription = document.getElementById('premiumDescription');
+
+            // Reset visibility
+            standardDescription.style.display = 'none';
+            proDescription.style.display = 'none';
+            premiumDescription.style.display = 'none';
+
+            // Check which checkboxes are selected
+            var checkboxes = document.querySelectorAll('[id*=chkTicketLevels] input[type=checkbox]');
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    var level = checkbox.value.toLowerCase();
+                    if (level === 'standard') {
+                        standardDescription.style.display = 'block';
+                    } else if (level === 'pro') {
+                        proDescription.style.display = 'block';
+                    } else if (level === 'premium') {
+                        premiumDescription.style.display = 'block';
+                    }
+                }
+            });
+        }
+
+        // Attach the function to the checkbox click event
+        var checkboxes = document.querySelectorAll('[id*=chkTicketLevels] input[type=checkbox]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('click', toggleTextBoxes);
+        });
+
+    </script>
+    
 </asp:Content>
 

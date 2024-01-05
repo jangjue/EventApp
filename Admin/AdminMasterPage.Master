@@ -70,7 +70,21 @@
             <ul class="menu_items submenu">
               <a href="AddCategory.aspx" class="nav_link sublink">Add Category</a>
               <a href="ManageCategory.aspx" class="nav_link sublink">Manage Category</a>
+            </ul>
+          </li>
 
+                      <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-grid-alt"></i>
+              </span>
+              <span class="navlink">Venue</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+
+            <ul class="menu_items submenu">
+              <a href="AddVenue.aspx" class="nav_link sublink">Add Venue</a>
+              <a href="ManageVenue.aspx" class="nav_link sublink">Manage Venue</a>
             </ul>
           </li>
           <!-- end -->
@@ -105,7 +119,7 @@
               <span class="navlink_icon">
                 <i class="bx bx-filter"></i>
               </span>
-              <span class="navlink">Manage Users</span>
+              <span class="navlink">View Users</span>
             </a>
           </li>    
 

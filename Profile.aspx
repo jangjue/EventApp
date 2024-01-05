@@ -6,199 +6,110 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container light-style flex-grow-1 container-p-y">
-        <h4 class="font-weight-bold py-3 mb-4">
-            Profile settings
-        </h4>
-        <div class="card overflow-hidden">
-            <div class="row no-gutters row-bordered row-border-light">
-                <div class="col-md-3 pt-0">
-                    <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list"
-                            href="#account-general">General</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-change-password">Change password</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-info">Info</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-notifications">Notifications</a>
+            <h4 class="font-weight-bold py-3 mb-4">Profile settings
+            </h4>
+            <div class="card overflow-hidden">
+                <div class="row no-gutters row-bordered row-border-light">
+                    <div class="col-md-3 pt-0">
+                        <div class="list-group list-group-flush account-settings-links">
+                            <a class="list-group-item list-group-item-action active" data-toggle="list"
+                                href="#account-general">General</a>
+                            <a class="list-group-item list-group-item-action" data-toggle="list"
+                                href="#account-change-password" style="left: 0px; top: 0px">Change password</a>
+                            <a class="list-group-item list-group-item-action" data-toggle="list"
+                                href="#account-info">Info</a>
+
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="tab-content">
-                        <div class="tab-pane fade active show" id="account-general">
-                            <div class="card-body media align-items-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                    class="d-block ui-w-80">
-                                <div class="media-body ml-4">
-                                    <label class="btn btn-outline-primary">
-                                        Upload new photo
-                                        <input type="file" class="account-settings-fileinput">
-                                    </label> &nbsp;
-                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
-                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" value="nmaxwell">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" value="Nelle Maxwell">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" value="nmaxwell@mail.com">
-                                    <div class="alert alert-warning mt-3">
-                                        Your email is not confirmed. Please check your inbox.<br>
-                                        <a href="javascript:void(0)">Resend confirmation</a>
+                    <div class="auto-style2">
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="account-general">
+                                <div class="card-body media align-items-center">
+                                    <asp:Image ID="imgAvatar" runat="server" CssClass="d-block ui-w-80" />
+                                    <div class="media-body ml-4">
+                                        <asp:FileUpload ID="fileUpload" runat="server" CssClass="auto-style1" />
+                                        <asp:Button ID="btnUpload" runat="server" CssClass="btn btn-outline-primary" Text="Upload new photo" OnClick="btnUpload_Click" CausesValidation="False" />
+                                        <asp:Button ID="btnReset" runat="server" CssClass="btn btn-default md-btn-flat" Text="Reset" CausesValidation="False" />
+                                        <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label">Company</label>
-                                    <input type="text" class="form-control" value="Company Ltd.">
+                                <hr class="border-light m-0">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblUsername" runat="server" AssociatedControlID="txtUsername" CssClass="form-label">Username</asp:Label>
+                                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control mb-1" Text=""></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label ID="lblName" runat="server" AssociatedControlID="txtName" CssClass="form-label">Name</asp:Label>
+                                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control" Text=""></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label ID="lblEmail" runat="server" AssociatedControlID="txtEmail" CssClass="form-label">E-mail</asp:Label>
+                                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control mb-1" Text=""></asp:TextBox>
+                                    </div>
+                                    <asp:Button ID="btnVerify" runat="server" CssClass="" Text="Verify Email" OnClick="VerifyEmail_Click" CausesValidation="False" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="account-change-password">
-                            <div class="card-body pb-2">
-                                <div class="form-group">
-                                    <label class="form-label">Current password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">New password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Repeat new password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="account-info">
-                            <div class="card-body pb-2">
-                                <div class="form-group">
-                                    <label class="form-label">Bio</label>
-                                    <textarea class="form-control"
-                                        rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc arcu, dignissim sit amet sollicitudin iaculis, vehicula id urna. Sed luctus urna nunc. Donec fermentum, magna sit amet rutrum pretium, turpis dolor molestie diam, ut lacinia diam risus eleifend sapien. Curabitur ac nibh nulla. Maecenas nec augue placerat, viverra tellus non, pulvinar risus.</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Birthday</label>
-                                    <input type="text" class="form-control" value="May 3, 1995">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Country</label>
-                                    <select class="custom-select">
-                                        <option>USA</option>
-                                        <option selected>Canada</option>
-                                        <option>UK</option>
-                                        <option>Germany</option>
-                                        <option>France</option>
-                                    </select>
+                            <div class="tab-pane fade" id="account-change-password">
+                                <div class="card-body pb-2">
+                                    <div class="form-group">
+                                        <asp:Label runat="server" CssClass="form-label" Text="Current password"></asp:Label>
+                                        <asp:TextBox runat="server" ID="txtCurrentPassword" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCurrentPassword" Text="Password is required." ErrorMessage="Password is required." CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" CssClass="form-label" Text="New password"></asp:Label>
+                                        <asp:TextBox runat="server" ID="txtNewPassword" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvNewPassword" runat="server" ControlToValidate="txtNewPassword" Text="New Password is required." ErrorMessage="New Password is required." CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" CssClass="form-label" Text="Repeat new password"></asp:Label>
+                                        <asp:TextBox runat="server" ID="txtRepeatNewPassword" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvRepeatNewPassword" runat="server" ControlToValidate="txtRepeatNewPassword" Text="Repeat New Password is required." ErrorMessage="Repeat New Password is required." CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <asp:CompareValidator ID="cvRepeatNewPassword" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtRepeatNewPassword" Operator="Equal" Type="String" Text="Passwords do not match." ErrorMessage="Passwords do not match." CssClass="text-danger" Display="Dynamic"></asp:CompareValidator>
+                                        <asp:RegularExpressionValidator ID="revPassword" runat="server" ControlToValidate="txtNewPassword" ErrorMessage="Invalid password format. Password must include at least one uppercase letter, one lowercase letter, one digit, and one special character." Display="Dynamic" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" CssClass="text-danger" />
+                                    </div>
+                                    <asp:Button runat="server" ID="btnChangePassword" Text="Change Password" CssClass="btn btn-primary" OnClick="btnChangePassword_Click" />
                                 </div>
                             </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Contacts</h6>
-                                <div class="form-group">
-                                    <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" value="+0 (123) 456 7891">
+                            <div class="tab-pane fade" id="account-info">
+                                <div class="card-body pb-2">
+                                    <div class="form-group">
+                                        <asp:Label runat="server" CssClass="form-label" Text="IC"></asp:Label>
+                                        <asp:TextBox runat="server" ID="txtIC" CssClass="form-control" Text="111111-11-1111"></asp:TextBox>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="account-notifications">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Activity</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone comments on my article</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone answers on my forum
-                                            thread</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone follows me</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Application</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">News and announcements</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly product updates</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly blog digest</span>
-                                    </label>
+                                <hr class="border-light m-0">
+                                <div class="card-body pb-2">
+                                    <h6 class="mb-4">Contact Number</h6>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" CssClass="form-label" Text="Phone"></asp:Label>
+                                        <asp:TextBox runat="server" ID="txtContactNum" CssClass="form-control" Text="+60 111 0972 7778"></asp:TextBox>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-right mt-3">
-            <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Save changes" PostBackUrl="~/Home.aspx" />
-            <asp:Button ID="Button2" runat="server"  class="btn btn-default" Text="Cancel" PostBackUrl="~/Profile.aspx" />
-        </div>
-    </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script type="lib/jquery/jquery.min.js">
+            <div class="text-right mt-3">
+                <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Save changes" OnClick="Sumbit_Click" CausesValidation="False" />
 
-</script>
+                <asp:Button ID="Button2" runat="server" class="btn btn-default" Text="Cancel" PostBackUrl="~/Profile.aspx" />
+            </div>
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="lib/jquery/jquery.min.js">
+
+        </script>
     </form>
 </body>
 </html>

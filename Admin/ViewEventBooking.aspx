@@ -1,53 +1,49 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="ViewEventBooking.aspx.cs" Inherits="EventApp.Admin.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMasterPage.Master" AutoEventWireup="true" CodeBehind="ViewEventBooking.aspx.cs" Inherits="EventApp.Admin.ViewEventBooking" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    </asp:Content>
+    <style type="text/css">
+        .auto-style7 {
+            height: 44px;
+            width: 148px;
+        }
+        .auto-style8 {
+            height: 20px;
+            width: 148px;
+        }
+    </style>
+</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="../css/table.css" />
 
     <div style="margin-top: 20px; margin-bottom: 20px;">
-    <table id="myTable" class="auto-style4">
-    <thead>
-        <h2>Event Booking</h2>
-    <hr style="margin-top: 10px; margin-bottom: 20px;" />
-        <tr>
-            <th class="auto-style6">#</th>
-            <th class="auto-style6">Booking ID</th>
-            <th class="auto-style6">Event Name</th>
-            <th class="auto-style6">Full Name</th>
-            <th class="auto-style6">Number of Ticket</th>
-            <th class="auto-style6">Booking Date</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="auto-style5">1</td>
-            <td class="auto-style5">B001</td>
-            <td class="auto-style5">Basketball Competition</td>
-            <td class="auto-style5">Soh Yik Ming</td>
-            <td class="auto-style5">1</td>
-            <td class="auto-style5">2023-12-15</td>
-        </tr>
-        <tr>
-            <td class="auto-style5">2</td>
-            <td class="auto-style5">B002</td>
-            <td class="auto-style5">Political Speech</td>
-            <td class="auto-style5">Lau Hui Liang</td>
-            <td class="auto-style5">3</td>
-            <td class="auto-style5">2023-11-17</td>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style5">3</td>
-            <td class="auto-style5">B003</td>
-            <td class="auto-style5">Invest Sharing</td>
-            <td class="auto-style5">Yee Jang Jue</td>
-            <td class="auto-style5">4</td>
-            <td class="auto-style5">2023-10-11</td>
-            </td>
-        </tr>
-    </tbody>
-</table>
-        </div>
+        <table id="myTable" class="auto-style4">
+            <thead>
+                <h2>View Booking Details</h2>
+                <hr style="margin-top: 10px; margin-bottom: 20px;" />
+                <tr>
+                    <th class="auto-style6">#</th>
+                    <th class="auto-style6">Booking ID</th>
+                    <th class="auto-style6">Full Name</th>
+                    <th class="auto-style6">Type Of Ticket</th>
+                    <th class="auto-style6">Number of Ticket</th>
+                    <th class="auto-style6">Booking Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td class="auto-style5"><%# Container.ItemIndex + 1 %></td>
+                            <td class="auto-style5"><%# Eval("BookingID") %></td>
+                            <td class="auto-style5"><%# Eval("ParticipantName") %></td>
+                            <td class="auto-style5"><%# Eval("Type") %></td>
+                            <td class="auto-style5"><%# Eval("Quantity") %></td>
+                            <td class="auto-style5"><%# Eval("BookingDate", "{0:yyyy-MM-dd}") %></td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+        </table>
+    </div>
 </asp:Content>
